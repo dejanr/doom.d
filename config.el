@@ -6,3 +6,6 @@
 (setq org-directory "~/org/")
 
 (setq projectile-project-search-path '("~/projects/"))
+
+;;; :ui doom-dashboard
+(setq fancy-splash-image (concat doom-private-dir "splash.png"))
