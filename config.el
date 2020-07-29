@@ -5,4 +5,4 @@
 
 (setq org-directory "~/org/")
 
-(setq projectile-project-search-path "~/projects/")
+(setq projectile-project-search-path '("~/projects/"))
