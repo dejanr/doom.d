@@ -14,7 +14,13 @@
       lsp-ui-sideline-enable nil
       lsp-enable-symbol-highlighting nil)
 
-(setq projectile-project-search-path '("~/projects/"))
+;;; projectile
+(setq projectile-completion-system 'ivy
+      ;; discover projects directory
+      projectile-project-search-path '("~/projects/")
+      ;; change neotree root folder when projectile project is changed
+      projectile-switch-project-action 'neotree-projectile-action
+)
 
 ;;; :ui doom-dashboard
 (setq fancy-splash-image (concat doom-private-dir "splash.png"))
@@ -46,3 +52,6 @@
       org-journal-file-format "%Y%m%d.org"
       org-ellipsis " ▼ "
       org-superstar-headline-bullets-list '("#"))
+
+;; Fix org-mode ad-Advice-newline-and-indent
+(add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
